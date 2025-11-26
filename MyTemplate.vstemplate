@@ -1,0 +1,245 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>OpenSiv3D_0.6.16</Name>
+    <Description>A project for creating a Siv3D application</Description>
+    <ProjectType>VC</ProjectType>
+    <LanguageTag>cpp</LanguageTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>desktop</ProjectTypeTag>
+    <ProjectTypeTag>games</ProjectTypeTag>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>OpenSiv3D_0.6.16</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="OpenSiv3D_0.6.16.vcxproj" File="OpenSiv3D_0.6.16.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">OpenSiv3D_0.6.16.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Main.cpp" OpenInEditor="true">Main.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="stdafx.cpp">stdafx.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="stdafx.h">stdafx.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Resource.rc">App\Resource.rc</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="icon.ico">App\icon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="SoundTouch_x64.dll">App\dll\soundtouch\SoundTouch_x64.dll</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="COPYING.TXT">App\dll\soundtouch\COPYING.TXT</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-brands.otf.zstdcmp">App\engine\font\fontawesome\fontawesome-brands.otf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-solid.otf.zstdcmp">App\engine\font\fontawesome\fontawesome-solid.otf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE.txt">App\engine\font\fontawesome\LICENSE.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="license.md">App\engine\font\materialdesignicons\license.md</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="materialdesignicons-webfont.ttf.zstdcmp">App\engine\font\materialdesignicons\materialdesignicons-webfont.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE_E">App\engine\font\mplus\LICENSE_E</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-black.ttf.zstdcmp">App\engine\font\mplus\mplus-1p-black.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-bold.ttf.zstdcmp">App\engine\font\mplus\mplus-1p-bold.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-heavy.ttf.zstdcmp">App\engine\font\mplus\mplus-1p-heavy.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-light.ttf.zstdcmp">App\engine\font\mplus\mplus-1p-light.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-medium.ttf.zstdcmp">App\engine\font\mplus\mplus-1p-medium.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-regular.ttf.zstdcmp">App\engine\font\mplus\mplus-1p-regular.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mplus-1p-thin.ttf.zstdcmp">App\engine\font\mplus\mplus-1p-thin.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE">App\engine\font\noto-cjk\LICENSE</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="NotoSansCJK-Regular.ttc.zstdcmp">App\engine\font\noto-cjk\NotoSansCJK-Regular.ttc.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="NotoSansJP-Regular.otf.zstdcmp">App\engine\font\noto-cjk\NotoSansJP-Regular.otf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE">App\engine\font\noto-emoji\LICENSE</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="NotoColorEmoji.ttf.zstdcmp">App\engine\font\noto-emoji\NotoColorEmoji.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="NotoEmoji-Regular.ttf.zstdcmp">App\engine\font\noto-emoji\NotoEmoji-Regular.ttf.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE">App\engine\font\min\LICENSE</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="siv3d-min.woff">App\engine\font\min\siv3d-min.woff</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="apply_srgb_curve.ps">App\engine\shader\d3d11\apply_srgb_curve.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="bitmapfont.ps">App\engine\shader\d3d11\bitmapfont.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="copy.ps">App\engine\shader\d3d11\copy.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="forward3d.ps">App\engine\shader\d3d11\forward3d.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="forward3d.vs">App\engine\shader\d3d11\forward3d.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="fullscreen_triangle.ps">App\engine\shader\d3d11\fullscreen_triangle.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="fullscreen_triangle.vs">App\engine\shader\d3d11\fullscreen_triangle.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="gaussian_blur_13.ps">App\engine\shader\d3d11\gaussian_blur_13.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="gaussian_blur_5.ps">App\engine\shader\d3d11\gaussian_blur_5.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="gaussian_blur_9.ps">App\engine\shader\d3d11\gaussian_blur_9.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="line3d.ps">App\engine\shader\d3d11\line3d.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="line3d.vs">App\engine\shader\d3d11\line3d.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdffont.ps">App\engine\shader\d3d11\msdffont.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdffont_outline.ps">App\engine\shader\d3d11\msdffont_outline.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdffont_outlineshadow.ps">App\engine\shader\d3d11\msdffont_outlineshadow.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdffont_shadow.ps">App\engine\shader\d3d11\msdffont_shadow.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdfprint.ps">App\engine\shader\d3d11\msdfprint.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="quad_warp.ps">App\engine\shader\d3d11\quad_warp.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="quad_warp.vs">App\engine\shader\d3d11\quad_warp.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="round_dot.ps">App\engine\shader\d3d11\round_dot.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sdffont.ps">App\engine\shader\d3d11\sdffont.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sdffont_outline.ps">App\engine\shader\d3d11\sdffont_outline.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sdffont_outlineshadow.ps">App\engine\shader\d3d11\sdffont_outlineshadow.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sdffont_shadow.ps">App\engine\shader\d3d11\sdffont_shadow.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="shape.ps">App\engine\shader\d3d11\shape.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sky.ps">App\engine\shader\d3d11\sky.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sprite.vs">App\engine\shader\d3d11\sprite.vs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="square_dot.ps">App\engine\shader\d3d11\square_dot.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="texture.ps">App\engine\shader\d3d11\texture.ps</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="apply_srgb_curve.frag">App\engine\shader\glsl\apply_srgb_curve.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="bitmapfont.frag">App\engine\shader\glsl\bitmapfont.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="copy.frag">App\engine\shader\glsl\copy.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="forward3d.frag">App\engine\shader\glsl\forward3d.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="forward3d.vert">App\engine\shader\glsl\forward3d.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="fullscreen_triangle.frag">App\engine\shader\glsl\fullscreen_triangle.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="fullscreen_triangle.vert">App\engine\shader\glsl\fullscreen_triangle.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="gaussian_blur_13.frag">App\engine\shader\glsl\gaussian_blur_13.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="gaussian_blur_5.frag">App\engine\shader\glsl\gaussian_blur_5.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="gaussian_blur_9.frag">App\engine\shader\glsl\gaussian_blur_9.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="line3d.frag">App\engine\shader\glsl\line3d.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="line3d.vert">App\engine\shader\glsl\line3d.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdffont.frag">App\engine\shader\glsl\msdffont.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdffont_outline.frag">App\engine\shader\glsl\msdffont_outline.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdffont_outlineshadow.frag">App\engine\shader\glsl\msdffont_outlineshadow.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdffont_shadow.frag">App\engine\shader\glsl\msdffont_shadow.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="msdfprint.frag">App\engine\shader\glsl\msdfprint.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="quad_warp.frag">App\engine\shader\glsl\quad_warp.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="quad_warp.vert">App\engine\shader\glsl\quad_warp.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="round_dot.frag">App\engine\shader\glsl\round_dot.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sdffont.frag">App\engine\shader\glsl\sdffont.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sdffont_outline.frag">App\engine\shader\glsl\sdffont_outline.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sdffont_outlineshadow.frag">App\engine\shader\glsl\sdffont_outlineshadow.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sdffont_shadow.frag">App\engine\shader\glsl\sdffont_shadow.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="shape.frag">App\engine\shader\glsl\shape.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sky.frag">App\engine\shader\glsl\sky.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sprite.vert">App\engine\shader\glsl\sprite.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="square_dot.frag">App\engine\shader\glsl\square_dot.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="texture.frag">App\engine\shader\glsl\texture.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="GMGSx.sf2.zstdcmp">App\engine\soundfont\GMGSx.sf2.zstdcmp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="GMGSx.sf2.txt">App\engine\soundfont\GMGSx.sf2.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="128.png">App\engine\texture\box-shadow\128.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="16.png">App\engine\texture\box-shadow\16.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="256.png">App\engine\texture\box-shadow\256.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="32.png">App\engine\texture\box-shadow\32.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="64.png">App\engine\texture\box-shadow\64.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="8.png">App\engine\texture\box-shadow\8.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="test.mp3">App\example\test.mp3</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="bay.jpg">App\example\bay.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="particle.png">App\example\particle.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="siv3d-kun.png">App\example\siv3d-kun.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="windmill.png">App\example\windmill.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE.txt">App\example\LICENSE.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="shot.mp3">App\example\shot.mp3</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="config.csv">App\example\csv\config.csv</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="DotGothic16-Regular.ttf">App\example\font\DotGothic16\DotGothic16-Regular.ttf</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="README-JP.md">App\example\font\DotGothic16\README-JP.md</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="README.md">App\example\font\DotGothic16\README.md</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="OFL.txt">App\example\font\DotGothic16\OFL.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="RocknRollOne-Regular.ttf">App\example\font\RocknRoll\RocknRollOne-Regular.ttf</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="README-JP.md">App\example\font\RocknRoll\README-JP.md</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="README.md">App\example\font\RocknRoll\README.md</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="OFL.txt">App\example\font\RocknRoll\OFL.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="countries.geojson">App\example\geojson\countries.geojson</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="test.gif">App\example\gif\test.gif</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="config.ini">App\example\ini\config.ini</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="config.json">App\example\json\config.json</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="empty.json">App\example\json\empty.json</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="invalid-blank.json">App\example\json\invalid-blank.json</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="invalid-syntax.json">App\example\json\invalid-syntax.json</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="test.json">App\example\json\test.json</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="test.mid">App\example\midi\test.mid</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="test.txt">App\example\midi\test.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="bark.jpg">App\example\obj\bark.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="leaves.png">App\example\obj\leaves.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pine_leaves_red.png">App\example\obj\pine_leaves_red.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="siv3d-kun.mtl">App\example\obj\siv3d-kun.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="siv3d-kun.obj">App\example\obj\siv3d-kun.obj</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="siv3d-kun.png">App\example\obj\siv3d-kun.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="siv3d-kun-eye.png">App\example\obj\siv3d-kun-eye.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="blacksmith.mtl">App\example\obj\blacksmith.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="blacksmith.obj">App\example\obj\blacksmith.obj</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="crystal1.mtl">App\example\obj\crystal1.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="crystal1.obj">App\example\obj\crystal1.obj</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="crystal2.mtl">App\example\obj\crystal2.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="crystal2.obj">App\example\obj\crystal2.obj</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="crystal3.mtl">App\example\obj\crystal3.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="crystal3.obj">App\example\obj\crystal3.obj</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mill.mtl">App\example\obj\mill.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="mill.obj">App\example\obj\mill.obj</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pine.mtl">App\example\obj\pine.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="pine.obj">App\example\obj\pine.obj</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="tree.mtl">App\example\obj\tree.mtl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="tree.obj">App\example\obj\tree.obj</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="credit.txt">App\example\obj\credit.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="eye.xml">App\example\objdetect\haarcascade\eye.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="face_anime.xml">App\example\objdetect\haarcascade\face_anime.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="frontal_catface.xml">App\example\objdetect\haarcascade\frontal_catface.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="frontal_face_alt2.xml">App\example\objdetect\haarcascade\frontal_face_alt2.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="paint.as">App\example\script\paint.as</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="piano.as">App\example\script\piano.as</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="test.as">App\example\script\test.as</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="breakout.as">App\example\script\breakout.as</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="hello.as">App\example\script\hello.as</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="game_of_life.frag">App\example\shader\glsl\game_of_life.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="grayscale.frag">App\example\shader\glsl\grayscale.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="homography.frag">App\example\shader\glsl\homography.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="homography.vert">App\example\shader\glsl\homography.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="multi_texture_blend.frag">App\example\shader\glsl\multi_texture_blend.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="multi_texture_mask.frag">App\example\shader\glsl\multi_texture_mask.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="poisson_disk.frag">App\example\shader\glsl\poisson_disk.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="posterize.frag">App\example\shader\glsl\posterize.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="rgb_shift.frag">App\example\shader\glsl\rgb_shift.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="rgb_to_bgr.frag">App\example\shader\glsl\rgb_to_bgr.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="soft_shape.vert">App\example\shader\glsl\soft_shape.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="swirl.frag">App\example\shader\glsl\swirl.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="terrain_forward.frag">App\example\shader\glsl\terrain_forward.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="terrain_forward.vert">App\example\shader\glsl\terrain_forward.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="terrain_normal.frag">App\example\shader\glsl\terrain_normal.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default2d.vert">App\example\shader\glsl\default2d.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default2d_shape.frag">App\example\shader\glsl\default2d_shape.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default2d_texture.frag">App\example\shader\glsl\default2d_texture.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default3d_forward.frag">App\example\shader\glsl\default3d_forward.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default3d_forward_shadow_depth.frag">App\example\shader\glsl\default3d_forward_shadow_depth.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default3d_forward_shadow_shading.frag">App\example\shader\glsl\default3d_forward_shadow_shading.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default3d_forward.vert">App\example\shader\glsl\default3d_forward.vert</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="extract_bright_linear.frag">App\example\shader\glsl\extract_bright_linear.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="forward_fog.frag">App\example\shader\glsl\forward_fog.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="forward_triplanar.frag">App\example\shader\glsl\forward_triplanar.frag</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="multi_texture_blend.hlsl">App\example\shader\hlsl\multi_texture_blend.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="multi_texture_mask.hlsl">App\example\shader\hlsl\multi_texture_mask.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="poisson_disk.hlsl">App\example\shader\hlsl\poisson_disk.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="posterize.hlsl">App\example\shader\hlsl\posterize.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="rgb_shift.hlsl">App\example\shader\hlsl\rgb_shift.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="rgb_to_bgr.hlsl">App\example\shader\hlsl\rgb_to_bgr.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="soft_shape.hlsl">App\example\shader\hlsl\soft_shape.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="swirl.hlsl">App\example\shader\hlsl\swirl.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="terrain_forward.hlsl">App\example\shader\hlsl\terrain_forward.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="terrain_normal.hlsl">App\example\shader\hlsl\terrain_normal.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default2d.hlsl">App\example\shader\hlsl\default2d.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default3d_forward.hlsl">App\example\shader\hlsl\default3d_forward.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="default3d_forward_shadow.hlsl">App\example\shader\hlsl\default3d_forward_shadow.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="extract_bright_linear.hlsl">App\example\shader\hlsl\extract_bright_linear.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="forward_fog.hlsl">App\example\shader\hlsl\forward_fog.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="forward_triplanar.hlsl">App\example\shader\hlsl\forward_triplanar.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="game_of_life.hlsl">App\example\shader\hlsl\game_of_life.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="grayscale.hlsl">App\example\shader\hlsl\grayscale.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="homography.hlsl">App\example\shader\hlsl\homography.hlsl</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="siv3d-kun-16.png">App\example\spritesheet\siv3d-kun-16.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="siv3d-kun-16.txt">App\example\spritesheet\siv3d-kun-16.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="cat.svg">App\example\svg\cat.svg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="turtle.svg">App\example\svg\turtle.svg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="README.txt">App\example\svg\README.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="earth.jpg">App\example\texture\earth.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="grass.jpg">App\example\texture\grass.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ground.jpg">App\example\texture\ground.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="rock.jpg">App\example\texture\rock.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="uv.png">App\example\texture\uv.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="wood.jpg">App\example\texture\wood.jpg</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="credit.txt">App\example\texture\credit.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="config.toml">App\example\toml\config.toml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="test.toml">App\example\toml\test.toml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="jp.txt">App\example\txt\jp.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="kr.txt">App\example\txt\kr.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="sc.txt">App\example\txt\sc.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="en.txt">App\example\txt\en.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="river.mp4">App\example\video\river.mp4</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="river.txt">App\example\video\river.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="config.xml">App\example\xml\config.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="test.xml">App\example\xml\test.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="zip_test.zip">App\example\zip\zip_test.zip</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName=".editorconfig">.editorconfig</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
