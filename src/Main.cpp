@@ -1,9 +1,10 @@
-﻿# include <Siv3D.hpp>
+﻿#include <Siv3D.hpp>
+#include <vector>
 
-// types of fruits
+// Types of fruits
 static constexpr int FruitCount = 10;
 
-// for texture and radius of fruit
+// For texture and radius of fruit
 struct FruitDef {
     Texture texture;
     double radius;
@@ -11,57 +12,49 @@ struct FruitDef {
 
 struct Fruit {
     int type;
-    P2Body body;
+    Vec2 position;
+    Vec2 velocity;
+    double radius;
 };
 
-// release all fruits when game over
-static void ReleaseFruits(Array<Fruit>& fruits)
-{
-    for (auto& f : fruits)
-    {
-        if (f.body)
-        {
-            f.body.release();
-        }
-    }
+// Basic physics constants
+constexpr double Gravity = 500;
+constexpr double Friction = 0.999;
+constexpr double StepTime = 1.0 / 60.0;
+
+
+// Release all fruits when game over
+static void ReleaseFruits(std::vector<Fruit>& fruits) {
     fruits.clear();
 }
 
-void Main()
-{
+
+void Main() {
     Window::Resize(800, 1000);
     Scene::SetBackground(ColorF(0.95));
 
     // Fruit definitions
-    const Array<FruitDef> fruitDefs = {
-        { Texture{U"🍒"_emoji}, 18 }, { Texture{U"🍇"_emoji}, 22 }, { Texture{U"🍓"_emoji}, 26 },
-        { Texture{U"🍊"_emoji}, 32 }, { Texture{U"🍎"_emoji}, 38 }, { Texture{U"🍐"_emoji}, 46 },
-        { Texture{U"🥝"_emoji}, 56 }, { Texture{U"🍍"_emoji}, 70 }, { Texture{U"🍈"_emoji}, 90 },
-        { Texture{U"🍉"_emoji}, 110 }
+    const std::vector<FruitDef> fruitDefs = {
+        { Texture{ U"🍒"_emoji }, 18 }, { Texture{ U"🍇"_emoji }, 22 }, { Texture{ U"🍓"_emoji }, 26 },
+        { Texture{ U"🍊"_emoji }, 32 }, { Texture{ U"🍎"_emoji }, 38 }, { Texture{ U"🍐"_emoji }, 46 },
+        { Texture{ U"🥝"_emoji }, 56 }, { Texture{ U"🍍"_emoji }, 70 }, { Texture{ U"🍈"_emoji }, 90 },
+        { Texture{ U"🍉"_emoji }, 110 }
     };
 
-    constexpr double StepTime = (1.0 / 60.0);
-    double accumulatedTime = 0.0;
+    constexpr double cupW = 450;
+    constexpr double cupH = 700;
 
-    P2World world;
+    // Static ground positions
+    const Vec2 floorPos = Vec2{ 400, 910 };
+    const Vec2 leftWallPos = Vec2{ 400 - cupW / 2 - 10, 200};
+    const Vec2 rightWallPos = Vec2{ 400 + cupW / 2 + 10, 200};
 
-    // Build static cup
-    const double cupW = 450;
-    const double cupH = 700;
-
-	Array<P2Body> grounds;
-    grounds << world.createRect(P2Static, Vec2{ 400, 910 }, Vec2{ cupW, 20 }); // floor
-    grounds << world.createRect(P2Static, Vec2{ 400 - cupW / 2 - 10, 900 - cupH / 2 }, Vec2{ 20, cupH }); // left wall
-    grounds << world.createRect(P2Static, Vec2{ 400 + cupW / 2 + 10, 900 - cupH / 2 }, Vec2{ 20, cupH }); // right wall
-
-    Array<Fruit> fruits;
+    std::vector<Fruit> fruits;
     bool gameOver = false;
 
-    // Current preview fruit type
     int previewType = Random(FruitCount - 1);
 
-    while (System::Update())
-    {
+    while (System::Update()) {
         if (gameOver) {
             if (SimpleGUI::Button(U"Restart", Vec2{ 350, 450 })) {
                 ReleaseFruits(fruits);
@@ -74,72 +67,129 @@ void Main()
         // Drop fruit on click
         if (MouseL.down()) {
             double r = fruitDefs[previewType].radius;
-            P2Body b = world.createCircle(P2Dynamic, Vec2{ Cursor::Pos().x, 80 }, r);
-            fruits.push_back(Fruit{ previewType, b });
-            previewType = Random(FruitCount - 1); // new preview fruit
+            fruits.push_back({ previewType, Vec2{ Cursor::Pos().x, 80 }, Vec2{ 0, 0 }, r });
+            previewType = Random(FruitCount - 1);
         }
 
         // Physics update
-        for (accumulatedTime += Scene::DeltaTime(); StepTime <= accumulatedTime; accumulatedTime -= StepTime) {
-            world.update(StepTime);
+        for (auto& f : fruits) {
+
+            // Gravity
+            f.velocity.y += Gravity * StepTime;
+
+            // Apply velocity
+            f.position += f.velocity * StepTime;
+
+            // Air friction
+            f.velocity *= Friction;
+
+            // Floor collision
+            if (f.position.y + f.radius > floorPos.y) {
+                f.position.y = floorPos.y - f.radius;
+                f.velocity.y *= -0.6;
+            }
+
+            // Walls collision
+            if (f.position.x - f.radius < leftWallPos.x) {
+                f.position.x = leftWallPos.x + f.radius;
+                f.velocity.x *= -0.6;
+            }
+            if (f.position.x + f.radius > rightWallPos.x) {
+                f.position.x = rightWallPos.x - f.radius;
+                f.velocity.x *= -0.6;
+            }
         }
 
-		// Remove fruits that went out-of-bounds (defeat condition)
-		for (auto& f : fruits) {
-			if (!f.body || f.body.getPos().y > 1100)
-			{
-				gameOver = true;
-			}
-		}
+        // Fruit–fruit collision
+        for (size_t i = 0; i < fruits.size(); ++i) {
+            for (size_t j = i + 1; j < fruits.size(); ++j) {
 
-        // Merging logic for fruits
-        bool didMerge = false;
-        for (size_t i = 0; i < fruits.size() && !didMerge; ++i) {
-            for (size_t j = i + 1; j < fruits.size() && !didMerge; ++j) {
-                auto& A = fruits[i];
-                auto& B = fruits[j];
-                if (A.type == B.type) {
-                    double dist = A.body.getPos().distanceFrom(B.body.getPos());
-                    double minDist = fruitDefs[A.type].radius + fruitDefs[B.type].radius + 100;
-                    if (dist < minDist * 0.8) {
-                        int newType = A.type + 1;
-                        Vec2 mergePos = (A.body.getPos() + B.body.getPos()) / 2;
+                Fruit& A = fruits[i];
+                Fruit& B = fruits[j];
 
-						// release current bodies
-                        A.body.release();
-                        B.body.release();
-                        fruits.erase(fruits.begin() + j);
-                        fruits.erase(fruits.begin() + i);
+                Vec2 diff = B.position - A.position;
+                double dist = diff.length();
+                double minDist = A.radius + B.radius;
 
-						// become next fruit
-                        if (newType < FruitCount) {
-                            double r = fruitDefs[newType].radius;
-                            P2Body nb = world.createCircle(P2Dynamic, mergePos, r);
-                            fruits.push_back(Fruit{ newType, nb });
-                        }
-                        didMerge = true;
-                    }
+                if (dist < minDist && dist > 0.0001) {
+
+                    Vec2 normal = diff / dist;
+                    double penetration = minDist - dist;
+
+                    // Push fruits apart
+                    A.position -= normal * (penetration * 0.5);
+                    B.position += normal * (penetration * 0.5);
+
+                    // Simple bounce response
+                    double va = Dot(A.velocity, normal);
+                    double vb = Dot(B.velocity, normal);
+                    double bounce = 0.8;
+
+                    double newVA = vb * bounce;
+                    double newVB = va * bounce;
+
+                    A.velocity += normal * (newVA - va);
+                    B.velocity += normal * (newVB - vb);
                 }
             }
         }
 
-        // Draw all ground
-		for (const auto& ground : grounds)
-		{
-			ground.draw(Palette::Gray);
-		}
+
+        // Merging logic
+        bool didMerge = false;
+
+        for (size_t i = 0; i < fruits.size() && !didMerge; ++i) {
+            for (size_t j = i + 1; j < fruits.size() && !didMerge; ++j) {
+
+                Fruit& A = fruits[i];
+                Fruit& B = fruits[j];
+
+                if (A.type != B.type) continue;
+
+                double dist = A.position.distanceFrom(B.position);
+                double minDist = A.radius + B.radius + 100;
+
+                // Merge threshold (overlap more than 40%)
+                if (dist < minDist) {
+                    int newType = A.type + 1;
+                    Vec2 mergePos = (A.position + B.position) * 0.5;
+
+                    fruits.erase(fruits.begin() + j);
+                    fruits.erase(fruits.begin() + i);
+
+                    if (newType < FruitCount) {
+                        double r = fruitDefs[newType].radius;
+                        fruits.push_back({ newType, mergePos, Vec2{ 0, 0 }, r });
+                    }
+
+                    didMerge = true;
+                }
+            }
+        }
+
+
+        // Game over if a fruit falls outside
+        for (auto& f : fruits) {
+            if (f.position.y > 1100) {
+                gameOver = true;
+            }
+        }
 
         // Draw fruits
         for (auto& f : fruits) {
-            if (!f.body) continue;
-			//Circle(f.body.getPos(), fruitDefs[f.type].radius).drawFrame(2, ColorF(1, 0, 0));
-            Vec2 pos = f.body.getPos();
             const auto& def = fruitDefs[f.type];
-            def.texture.resized(def.radius * 2).drawAt(pos);
+            def.texture.resized(f.radius * 2).drawAt(f.position);
         }
 
-        // Draw preview fruit following cursor (not physics body)
-        const auto& def = fruitDefs[previewType];
-        def.texture.resized(def.radius * 2).drawAt(Vec2{ Cursor::Pos().x, 80 });
+        // Preview fruit
+        {
+            const auto& def = fruitDefs[previewType];
+            def.texture.resized(def.radius * 2).drawAt(Vec2{ Cursor::Pos().x, 80 });
+        }
+
+        // Draw cup
+        Rect(floorPos.x - cupW / 2, floorPos.y - 10, cupW, 20).draw(Palette::Gray);
+        Rect(leftWallPos.x - 10, leftWallPos.y, 20, cupH).draw(Palette::Gray);
+        Rect(rightWallPos.x - 10, rightWallPos.y, 20, cupH).draw(Palette::Gray);
     }
 }
